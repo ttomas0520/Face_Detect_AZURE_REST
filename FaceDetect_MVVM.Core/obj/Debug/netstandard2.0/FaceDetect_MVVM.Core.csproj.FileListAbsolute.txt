@@ -1,0 +1,12 @@
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\bin\Debug\netstandard2.0\FaceDetect_MVVM.Core.deps.json
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\bin\Debug\netstandard2.0\FaceDetect_MVVM.Core.dll
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\bin\Debug\netstandard2.0\FaceDetect_MVVM.Core.pdb
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.csproj.AssemblyReference.cache
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.AssemblyInfoInputs.cache
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.AssemblyInfo.cs
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.csproj.CoreCompileInputs.cache
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.csproj.CopyComplete
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.dll
+D:\Egyetem\kliensoldali\FaceDetect_MVVM.Core\obj\Debug\netstandard2.0\FaceDetect_MVVM.Core.pdb

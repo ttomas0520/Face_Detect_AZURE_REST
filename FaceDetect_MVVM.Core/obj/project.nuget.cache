@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "sULmydQNd2hdbHfT64Ae7c+Y7Rsq8hDyYhEO7GmBO5VlVJmquAGIgwxOIIqGs+m4r1TPlj1cj2AWgPz7lH/AhQ==",
+  "success": true,
+  "projectFilePath": "D:\\Egyetem\\kliensoldali\\FaceDetect_MVVM.Core\\FaceDetect_MVVM.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ttoma\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ttoma\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\ttoma\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

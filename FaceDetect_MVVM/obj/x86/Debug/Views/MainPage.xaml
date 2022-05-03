@@ -1,0 +1,113 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="FaceDetect_MVVM.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:views="using:FaceDetect_MVVM.Views"
+    xmlns:toolkitConverters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    xmlns:model="using:FaceDetect_MVVM.Core.Models"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <toolkitConverters:BoolToVisibilityConverter x:ConnectionId='2' x:Name="ReverseBoolToVisibility" TrueValue="Collapsed" FalseValue="Visible" />
+    </Page.Resources>
+
+    <Grid x:ConnectionId='3' x:Name="ContentArea">
+        <winui:TwoPaneView x:ConnectionId='4'
+            x:Name="twoPaneView"
+            Pane1Length="0.5*"
+            Pane2Length="0.5*"
+                                                                          
+            MinWideModeWidth="772"
+            WideModeConfiguration="LeftRight"
+            TallModeConfiguration="SinglePane"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <i:Interaction.Behaviors>
+                <ic:EventTriggerBehavior EventName="ModeChanged">
+                    <ic:InvokeCommandAction x:ConnectionId='6'                                                 />
+                </ic:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+            <winui:TwoPaneView.Pane1>
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*" MinHeight="500" />
+                        <RowDefinition Height="0.5*" MinHeight="500" />
+                    </Grid.RowDefinitions>
+                    <Grid Margin="0 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.9*"></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Canvas x:ConnectionId='11' Grid.Row="0"  x:Name="canvas" Width="500" Height="500">
+                            <Image x:ConnectionId='12' x:Name="mainImage" Source="{Binding MainImage,  Mode=OneWay}" Stretch="None" />
+                        </Canvas>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button  Content="Take picture" Command="{Binding TakePictureCommand}" HorizontalAlignment="Center" Width="250" Height="250">
+                                <Button.Background>
+                                    <SolidColorBrush Color="#FF9EF542" Opacity="0.97"/>
+                                </Button.Background>
+                                <Button.FocusVisualPrimaryBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="Black"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.FocusVisualPrimaryBrush>
+                            </Button>
+                            <Button Background="#f5a442" Grid.Column="1"   Content="Pick picture" Command="{Binding OpenPictureCommand}" HorizontalAlignment="Center" Width="250" Height="250" >
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                    <ListView x:ConnectionId='7'
+                        Grid.Row="1"
+                        IsItemClickEnabled="True"
+                                                                      
+                                                                                  >
+                        <i:Interaction.Behaviors>
+                            <ic:EventTriggerBehavior EventName="ItemClick">
+                                <ic:InvokeCommandAction x:ConnectionId='8'                                               />
+                            </ic:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                        <ListView.ItemTemplate>
+                            <DataTemplate                                >
+                                <views:MainListItemControl Item="{Binding}" />
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </winui:TwoPaneView.Pane1>
+            <winui:TwoPaneView.Pane2>
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <views:MainDetailControl x:ConnectionId='13'                                                            />
+                </Grid>
+            </winui:TwoPaneView.Pane2>
+        </winui:TwoPaneView>
+        <Button x:ConnectionId='5'
+            VerticalAlignment="Top"
+            Background="Transparent"
+            BorderThickness="0"
+            Padding="{StaticResource XSmallLeftTopRightBottomMargin}"
+                                                      
+                                                                               >
+            <SymbolIcon Symbol="Back" />
+        </Button>
+    </Grid>
+</Page>
+

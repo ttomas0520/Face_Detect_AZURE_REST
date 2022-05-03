@@ -1,0 +1,1 @@
+D:\Egyetem\kliensoldali\FaceDetect_MVVM\FaceDetect_MVVM.csproj;x86

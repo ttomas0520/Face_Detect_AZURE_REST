@@ -1,0 +1,141 @@
+﻿<UserControl
+    x:Class="FaceDetect_MVVM.Views.MainDetailControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:FaceDetect_MVVM.Core.Models"
+    mc:Ignorable="d"
+    d:DesignWidth="400" Height="2129">
+    <ScrollViewer
+        Name="ForegroundElement"
+        Padding="{StaticResource DetailPageMargin}"
+        HorizontalAlignment="Stretch"
+        VerticalScrollMode="Enabled"
+        IsTabStop="True">
+        <ScrollViewer.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFC5EAB3" Offset="0.329"/>
+                <GradientStop Color="#FFA5A7D8" Offset="0.691"/>
+            </LinearGradientBrush>
+        </ScrollViewer.Background>
+        <StackPanel HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                    Margin="{StaticResource SmallLeftMargin}"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource TitleTextBlockStyle}"                   
+                    Text="{x:Bind SelectedItem.faceId, Mode=OneWay}" />
+            </StackPanel>
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Gender" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.gender, Mode=OneWay}" />
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Age" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.age,Mode=OneWay}" />
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Hair" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.getHairColor, Mode=OneWay}" />
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Emotion" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.getEmotion, Mode=OneWay}" />
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Glasses" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.glasses, Mode=OneWay}" />
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Smile" />
+            <TextBlock
+                Style="{StaticResource DetailBodyBaseMediumStyle}"
+                Text="{x:Bind SelectedItem.faceAttributes.smile, Mode=OneWay}" />
+
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Head Pose" />
+            <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}">
+                <Run Text="Pitch: "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.headPose.pitch, Mode=OneWay}"></Run>
+                <Run Text="    Roll:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.headPose.roll, Mode=OneWay}"></Run>
+                <Run Text="    Yaw:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.headPose.yaw, Mode=OneWay}"></Run>
+            </TextBlock>
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Facial Hair" />
+            <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}">
+                <Run Text="Moustache: "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.facialHair.moustache, Mode=OneWay}"></Run>
+                <Run Text="    Beard:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.facialHair.beard, Mode=OneWay}"></Run>
+                <Run Text="    Sideburns:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.facialHair.sideburns, Mode=OneWay}"></Run>
+            </TextBlock>
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Noise and Exposure" />
+            <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}">
+                <Run Text="Noise: "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.noise.noiseLevel, Mode=OneWay}"></Run>
+                <Run Text="  "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.noise.value, Mode=OneWay}"></Run>
+                <Run Text=" ----------  Exposure:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.exposure.exposureLevel, Mode=OneWay}"></Run>
+                <Run Text="  "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.exposure.value, Mode=OneWay}"></Run>
+
+            </TextBlock>
+
+            <TextBlock
+                Margin="{StaticResource SmallTopMargin}"
+                Style="{StaticResource DetailSubTitleStyle}"
+                Text="Occlusion" />
+            <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}">
+                <Run Text="Forehead: "></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.occlusion.foreheadOccluded, Mode=OneWay}"></Run>
+                <Run Text="  Eye:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.occlusion.eyeOccluded, Mode=OneWay}"></Run>
+                <Run Text="  Mouth:"></Run>
+                <Run Text="{x:Bind SelectedItem.faceAttributes.occlusion.mouthOccluded, Mode=OneWay}"></Run>
+            </TextBlock>
+
+
+
+
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
